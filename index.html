@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAIJUN ZOO — No AI, No Gain | AI Smart Video &amp; Interactive Creator</title>
+  <meta
+    name="description"
+    content="No AI, No Gain — AI 스마트 영상 콘텐츠 &amp; 바이브 코딩 인터랙티브 크리에이터 라이준주(@raijunzoo)의 공식 개인 포트폴리오."
+  />
+
+  <!-- Typography: Joyful Storybook Display + Refined Korean Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,600&family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    as="style"
+    crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+  />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Luxury Preloader Curtain -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-crown">
+        <svg viewBox="0 0 64 40" width="44" height="28" fill="none" aria-hidden="true">
+          <path
+            d="M4 34L12 10L24 22L32 5L40 22L52 10L60 34H4Z"
+            stroke="url(#goldGradPre)"
+            stroke-width="2"
+            stroke-linejoin="round"
+          />
+          <circle cx="32" cy="5" r="2.5" fill="#F7E3A1" />
+          <circle cx="12" cy="10" r="2" fill="#D4AF37" />
+          <circle cx="52" cy="10" r="2" fill="#D4AF37" />
+          <defs>
+            <linearGradient id="goldGradPre" x1="4" y1="5" x2="60" y2="34" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#F7E3A1" />
+              <stop offset="0.5" stop-color="#D4AF37" />
+              <stop offset="1" stop-color="#F5B841" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="preloader-title">NO AI, NO GAIN</div>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar" id="preloaderBar"></div>
+      </div>
+      <div class="preloader-sub">RAIJUN ZOO · ATELIER</div>
+    </div>
+  </div>
+
+  <!-- Fixed Full-Page 3D Cosmic Universe Canvas (Milky Way, Earth, Planets, Constellations) -->
+  <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Film Grain & Scroll Progress Bar -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+  <div class="scroll-progress-track" aria-hidden="true">
+    <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+  </div>
+
+  <!-- Custom Luxury Cursor (Desktop Only) -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       FIXED LUXURY NAVIGATION HEADER
+       1차원 메뉴: Home, Portfolio, Profile, Skill, Contact
+  ========================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#home" class="brand-logo" data-scroll-to="#home" aria-label="RAIJUN ZOO Home">
+        <span class="brand-emblem">
+          <img src="assets/images/raijun-logo-banner.jpg" alt="라이준주 캐릭터 심볼" />
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">RAIJUN ZOO</span>
+          <span class="brand-tag">NO AI · NO GAIN</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link is-active" data-scroll-to="#home">Home</a></li>
+          <li><a href="#portfolio" class="nav-link" data-scroll-to="#portfolio">Portfolio</a></li>
+          <li><a href="#profile" class="nav-link" data-scroll-to="#profile">Profile</a></li>
+          <li><a href="#skill" class="nav-link" data-scroll-to="#skill">Skill</a></li>
+          <li><a href="#contact" class="nav-link" data-scroll-to="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a
+          href="https://www.youtube.com/@raijunzoo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-youtube-pill magnetic"
+          aria-label="YouTube 채널 @raijunzoo 방문"
+        >
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path
+              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+            />
+          </svg>
+          <span>@raijunzoo</span>
+        </a>
+
+        <button
+          class="mobile-menu-btn"
+          id="mobileMenuBtn"
+          type="button"
+          aria-label="메뉴 열기"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-drawer-eyebrow">NAVIGATION · @RAIJUNZOO</div>
+      <ul class="mobile-nav-list">
+        <li><a href="#home" class="mobile-nav-link" data-scroll-to="#home"><span>01</span>Home</a></li>
+        <li><a href="#portfolio" class="mobile-nav-link" data-scroll-to="#portfolio"><span>02</span>Portfolio</a></li>
+        <li><a href="#profile" class="mobile-nav-link" data-scroll-to="#profile"><span>03</span>Profile</a></li>
+        <li><a href="#skill" class="mobile-nav-link" data-scroll-to="#skill"><span>04</span>Skill</a></li>
+        <li><a href="#contact" class="mobile-nav-link" data-scroll-to="#contact"><span>05</span>Contact</a></li>
+      </ul>
+      <a
+        href="https://www.youtube.com/@raijunzoo"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-luxury btn-luxury-primary"
+      >
+        <span>YouTube Channel 방문하기</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MAIN CONTENT
+  ========================================================= -->
+  <main id="mainContent">
+    <!-- =======================================================
+         01. HERO SECTION — INTERACTIVE COSMIC LUXURY
+    ======================================================= -->
+    <section id="home" class="hero-section">
+      <!-- Atmospheric Luxury Radial Glows -->
+      <div class="hero-glow hero-glow-left" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-right" aria-hidden="true"></div>
+
+      <!-- Subtle Architectural Orbital Rings -->
+      <div class="hero-orbit hero-orbit-1" aria-hidden="true"></div>
+      <div class="hero-orbit hero-orbit-2" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="hero-grid">
+          <!-- Left: Monumental Typography & Philosophy -->
+          <div class="hero-copy" data-parallax="-28">
+            <div class="hero-eyebrow hero-reveal">
+              <span class="eyebrow-star">✦</span>
+              <span>STARLIGHT WONDERLAND · KIDS AI STUDIO</span>
+              <span class="eyebrow-divider"></span>
+              <span class="eyebrow-handle">@RAIJUNZOO</span>
+            </div>
+
+            <h1 class="hero-headline" aria-label="No AI No Gain">
+              <span class="headline-line">
+                <span class="headline-word hero-title-reveal">NO AI,</span>
+              </span>
+              <span class="headline-line">
+                <span class="headline-word headline-gold hero-title-reveal">NO GAIN</span>
+              </span>
+            </h1>
+
+            <p class="hero-lead hero-reveal">
+              상상을 현실의 시네마와 인터랙티브 월드로 조각하는 <strong>AI 스마트 영상·콘텐츠 크리에이터</strong>.
+              <br />
+              생성형 AI, 3D 캐릭터 IP, 그리고 바이브 코딩이 만나 탄생하는 차세대 디지털 아틀리에를 경험하세요.
+            </p>
+
+            <div class="hero-cta-group hero-reveal">
+              <a href="#portfolio" class="btn-luxury btn-luxury-primary magnetic" data-scroll-to="#portfolio">
+                <span>Explore Portfolio</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a
+                href="https://www.youtube.com/@raijunzoo"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-luxury btn-luxury-ghost magnetic"
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  />
+                </svg>
+                <span>YouTube · 라이준주</span>
+              </a>
+            </div>
+
+            <div class="hero-metrics hero-reveal">
+              <div class="metric-item">
+                <span class="metric-value">08</span>
+                <span class="metric-label">AI &amp; Coding Stacks</span>
+              </div>
+              <div class="metric-sep"></div>
+              <div class="metric-item">
+                <span class="metric-value">3D IP</span>
+                <span class="metric-label">Raijun Universe</span>
+              </div>
+              <div class="metric-sep"></div>
+              <div class="metric-item">
+                <span class="metric-value">2026</span>
+                <span class="metric-label">Smart Video Eng.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive 3D Floating Astrolabe Emblem Card -->
+          <div class="hero-visual" data-parallax="36">
+            <div class="astrolabe-stage" id="heroTiltCard">
+              <div class="astrolabe-ring astrolabe-ring-outer"></div>
+              <div class="astrolabe-ring astrolabe-ring-inner"></div>
+              <div class="astrolabe-prism-halo"></div>
+
+              <div class="hero-crest-card">
+                <div class="crest-shine"></div>
+                <img
+                  src="assets/images/raijun-logo-banner.jpg"
+                  alt="라이준주 @raijunzoo 공식 시그니처 로고"
+                  class="crest-image"
+                />
+              </div>
+
+              <!-- Floating Orbital Badges -->
+              <div class="floating-pill pill-top-right">
+                <span class="pill-dot"></span>
+                <span>Interactive 3D &amp; WebGL</span>
+              </div>
+              <div class="floating-pill pill-bottom-left">
+                <span class="pill-star">★</span>
+                <span>Generative AI Cinema</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Luxury Scroll Indicator -->
+      <a href="#portfolio" class="scroll-cue" data-scroll-to="#portfolio" aria-label="포트폴리오 섹션으로 스크롤">
+        <span class="scroll-cue-text">SCROLL TO DISCOVER</span>
+        <span class="scroll-cue-line">
+          <span class="scroll-cue-runner"></span>
+        </span>
+      </a>
+    </section>
+
+    <!-- Luxury Editorial Marquee Ribbon -->
+    <div class="luxury-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>NO AI, NO GAIN</span><span class="m-star">✦</span>
+        <span>RAIJUN ZOO OFFICIAL</span><span class="m-star">✦</span>
+        <span>AI SMART VIDEO ENGINEERING</span><span class="m-star">✦</span>
+        <span>VIBE CODING &amp; INTERACTIVE WEB</span><span class="m-star">✦</span>
+        <span>3D CHARACTER UNIVERSE</span><span class="m-star">✦</span>
+        <span>NO AI, NO GAIN</span><span class="m-star">✦</span>
+        <span>RAIJUN ZOO OFFICIAL</span><span class="m-star">✦</span>
+        <span>AI SMART VIDEO ENGINEERING</span><span class="m-star">✦</span>
+        <span>VIBE CODING &amp; INTERACTIVE WEB</span><span class="m-star">✦</span>
+        <span>3D CHARACTER UNIVERSE</span><span class="m-star">✦</span>
+      </div>
+    </div>
+
+    <!-- =======================================================
+         02. PORTFOLIO SECTION — CURATED EXHIBITION
+    ======================================================= -->
+    <section id="portfolio" class="section portfolio-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <div class="section-meta">
+            <span class="section-num">01</span>
+            <span class="section-line"></span>
+            <span class="section-eyebrow">CURATED EXHIBITION</span>
+          </div>
+          <div class="section-header-row">
+            <h2 class="section-title">
+              Selected <span class="text-gold-italic">Portfolio</span>
+            </h2>
+            <p class="section-desc">
+              생성형 AI 시네마틱 영상부터 바이브 코딩으로 완성한 인터랙티브 에듀테크 월드까지,
+              라이준주만의 독창적인 세계관과 엔지니어링이 결합된 대표 프로젝트입니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="portfolio-filters reveal-up" role="tablist" aria-label="포트폴리오 카테고리 필터">
+          <button class="filter-btn is-active" type="button" data-filter="all" role="tab" aria-selected="true">
+            All Works <span>08</span>
+          </button>
+          <button class="filter-btn" type="button" data-filter="video" role="tab" aria-selected="false">
+            AI 3D Video <span>04</span>
+          </button>
+          <button class="filter-btn" type="button" data-filter="interactive" role="tab" aria-selected="false">
+            Interactive Web App <span>03</span>
+          </button>
+          <button class="filter-btn" type="button" data-filter="brand" role="tab" aria-selected="false">
+            Brand IP <span>01</span>
+          </button>
+        </div>
+
+        <!-- Portfolio Grid (Rendered dynamically from PORTFOLIO_DATA) -->
+        <div class="portfolio-grid" id="portfolioGrid"></div>
+
+        <!-- YouTube Cinema Spotlight Banner -->
+        <div class="youtube-spotlight reveal-up">
+          <div class="spotlight-bg-glow"></div>
+          <div class="spotlight-content">
+            <div class="spotlight-left">
+              <span class="spotlight-badge">OFFICIAL YOUTUBE CINEMA</span>
+              <h3 class="spotlight-title">라이준주 <span>@raijunzoo</span> 채널에서 더 많은 AI 영상을 감상하세요</h3>
+              <p class="spotlight-desc">
+                에스컬레이터 안전 탐험대, 한글 모험 에피소드, 3D 팝아웃 쇼츠 등 최신 스마트 AI 영상 콘텐츠가 지속적으로 공개됩니다.
+              </p>
+            </div>
+            <div class="spotlight-right">
+              <a
+                href="https://www.youtube.com/@raijunzoo"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-luxury btn-luxury-primary magnetic"
+              >
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  />
+                </svg>
+                <span>YouTube 채널 바로가기</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         03. PROFILE SECTION — CREATOR PERSONA & EDUCATION
+    ======================================================= -->
+    <section id="profile" class="section profile-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <div class="section-meta">
+            <span class="section-num">02</span>
+            <span class="section-line"></span>
+            <span class="section-eyebrow">THE CREATOR BEHIND THE UNIVERSE</span>
+          </div>
+          <h2 class="section-title">
+            Creator <span class="text-gold-italic">Profile</span>
+          </h2>
+        </div>
+
+        <div class="profile-grid">
+          <!-- Left: Luxury Framed Character Persona with Parallax -->
+          <div class="profile-visual-col reveal-up">
+            <div class="persona-frame">
+              <div class="persona-frame-corner tl"></div>
+              <div class="persona-frame-corner tr"></div>
+              <div class="persona-frame-corner bl"></div>
+              <div class="persona-frame-corner br"></div>
+
+              <div class="persona-image-wrap">
+                <img
+                  src="assets/images/raijun-logo-banner.jpg"
+                  alt="나를 표현하는 시그니처 캐릭터 라이준"
+                  class="persona-img parallax-img"
+                />
+              </div>
+
+              <div class="persona-quote-card">
+                <div class="quote-mark">“</div>
+                <p class="quote-text">No AI, No Gain</p>
+                <span class="quote-sub">AI로 불가능을 가능으로 바꾸는 크리에이터 · 라이준주</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Editorial Bio, Philosophy & Education -->
+          <div class="profile-info-col">
+            <div class="profile-intro reveal-up">
+              <span class="profile-kicker">CREATIVE TECHNOLOGIST &amp; AI FILMMAKER</span>
+              <h3 class="profile-heading">
+                기술에 숨결을 불어넣고,<br />
+                캐릭터에 <span>우주 같은 이야기</span>를 담습니다.
+              </h3>
+              <p class="profile-paragraph">
+                안녕하세요. <strong>‘No AI, No Gain’</strong>이라는 신념 아래 생성형 AI와 인터랙티브 웹 기술을 결합하여
+                프리미엄 스마트 영상 콘텐츠와 에듀테크 경험을 제작하는 크리에이터 <strong>라이준주(RAIJUN ZOO)</strong>입니다.
+              </p>
+              <p class="profile-paragraph">
+                기획과 스토리보드부터 3D 캐릭터 일관성 구현, AI 영상·음성·음악 프로덕션,
+                그리고 Antigravity·Three.js 기반의 바이브 코딩 배포까지 엔드투엔드 파이프라인을 독자적으로 구축합니다.
+              </p>
+            </div>
+
+            <!-- Education Highlight Card -->
+            <div class="education-block reveal-up">
+              <div class="edu-block-header">
+                <span class="edu-label">EDUCATION &amp; ENGINEERING TRACK</span>
+                <span class="edu-badge-live">COMPLETED 2026</span>
+              </div>
+
+              <div class="edu-timeline-card">
+                <div class="edu-date">2026.07.20 — 2026.11.24</div>
+                <h4 class="edu-title">AI로 만드는 스마트 영상 콘텐츠 제작 엔지니어링 과정</h4>
+                <p class="edu-desc">
+                  최신 멀티모달 생성형 AI(영상·이미지·TTS·음악), ComfyUI 커스텀 워크플로우,
+                  DaVinci Resolve 후반 작업 및 바이브 코딩 기반 웹 서비스 배포까지 전 과정을 실무 프로젝트로 완수했습니다.
+                </p>
+                <div class="edu-highlights">
+                  <span>✦ AI 시네마틱 영상 디렉팅</span>
+                  <span>✦ 캐릭터 IP &amp; 월드빌딩</span>
+                  <span>✦ ComfyUI 워크플로우 자동화</span>
+                  <span>✦ 바이브 코딩 &amp; 클라우드 배포</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Core Creative Pillars -->
+            <div class="pillars-grid reveal-up">
+              <div class="pillar-card">
+                <span class="pillar-num">I</span>
+                <h5>AI Smart Video</h5>
+                <p>일관된 3D 캐릭터와 시네마틱 퀄리티의 생성형 영상 스토리텔링</p>
+              </div>
+              <div class="pillar-card">
+                <span class="pillar-num">II</span>
+                <h5>Interactive Vibe Coding</h5>
+                <p>학습과 재미를 동시에 선사하는 반응형 3D·인터랙티브 웹 앱 구현</p>
+              </div>
+              <div class="pillar-card">
+                <span class="pillar-num">III</span>
+                <h5>End-to-End Pipeline</h5>
+                <p>기획·비주얼·음성·음악·편집·배포까지 단일 크리에이터의 완성도</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         04. SKILL SECTION — THE AI & CREATIVE ARSENAL
+    ======================================================= -->
+    <section id="skill" class="section skill-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <div class="section-meta">
+            <span class="section-num">03</span>
+            <span class="section-line"></span>
+            <span class="section-eyebrow">THE AI &amp; CREATIVE ARSENAL</span>
+          </div>
+          <div class="section-header-row">
+            <h2 class="section-title">
+              Capabilities &amp; <span class="text-gold-italic">Skills</span>
+            </h2>
+            <p class="section-desc">
+              LLM 에이전트부터 최첨단 Creative AI, 다국어 TTS, SUNO 음악, ComfyUI 노드 워크플로우,
+              바이브 코딩 및 클라우드 배포까지 8개 핵심 영역의 툴체인을 자유자재로 운용합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skill Bento Grid (Rendered dynamically from SKILLS_DATA) -->
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         05. CONTACT SECTION — PRIVATE CONCIERGE & SOCIALS
+    ======================================================= -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="contact-luxury-shell reveal-up">
+          <div class="contact-shell-glow" aria-hidden="true"></div>
+
+          <div class="contact-grid">
+            <!-- Left: Editorial Invitation & Direct Channels -->
+            <div class="contact-info">
+              <div class="section-meta">
+                <span class="section-num">04</span>
+                <span class="section-line"></span>
+                <span class="section-eyebrow">PRIVATE CONCIERGE</span>
+              </div>
+
+              <h2 class="contact-title">
+                Let’s Create Something<br />
+                <span class="text-gold-italic">Extraordinary</span>
+              </h2>
+
+              <p class="contact-desc">
+                AI 스마트 영상 제작, 3D 캐릭터 IP 협업, 인터랙티브 웹 콘텐츠 프로젝트 문의를 환영합니다.
+                아래 채널을 통해 언제든 편하게 연락해 주세요.
+              </p>
+
+              <div class="contact-channels">
+                <!-- Gmail -->
+                <div class="channel-card">
+                  <div class="channel-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7">
+                      <rect x="3" y="5" width="18" height="14" rx="2" />
+                      <path d="M3 7l9 6 9-6" />
+                    </svg>
+                  </div>
+                  <div class="channel-body">
+                    <span class="channel-label">GMAIL · DIRECT INQUIRY</span>
+                    <a href="mailto:00000000@gmail.com" class="channel-value" id="emailValue">00000000@gmail.com</a>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-copy-email"
+                    id="copyEmailBtn"
+                    data-email="00000000@gmail.com"
+                    aria-label="이메일 주소 복사"
+                  >
+                    Copy
+                  </button>
+                </div>
+
+                <!-- Instagram -->
+                <a
+                  href="https://www.instagram.com/raijunzoo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="channel-card channel-link"
+                >
+                  <div class="channel-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7">
+                      <rect x="3" y="3" width="18" height="18" rx="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                    </svg>
+                  </div>
+                  <div class="channel-body">
+                    <span class="channel-label">INSTAGRAM · SNS</span>
+                    <span class="channel-value">@raijunzoo</span>
+                  </div>
+                  <span class="channel-arrow">↗</span>
+                </a>
+
+                <!-- YouTube -->
+                <a
+                  href="https://www.youtube.com/@raijunzoo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="channel-card channel-link"
+                >
+                  <div class="channel-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                      <path
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="channel-body">
+                    <span class="channel-label">YOUTUBE · OFFICIAL CHANNEL</span>
+                    <span class="channel-value">youtube.com/@raijunzoo</span>
+                  </div>
+                  <span class="channel-arrow">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Refined Contact Inquiry Form -->
+            <div class="contact-form-wrap">
+              <form class="luxury-form" id="contactForm" novalidate>
+                <div class="form-header">
+                  <span class="form-kicker">SEND A MESSAGE</span>
+                  <h3>프로젝트 및 협업 문의</h3>
+                </div>
+
+                <div class="form-group">
+                  <label for="senderName">성함 / 브랜드명</label>
+                  <input type="text" id="senderName" name="name" placeholder="예: 홍길동 / 스튜디오" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="senderEmail">회신 받으실 이메일</label>
+                  <input type="email" id="senderEmail" name="email" placeholder="name@example.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="senderMessage">문의 내용</label>
+                  <textarea
+                    id="senderMessage"
+                    name="message"
+                    rows="4"
+                    placeholder="AI 영상 제작, 캐릭터 IP 협업, 인터랙티브 웹 프로젝트 등 자유롭게 남겨주세요."
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn-luxury btn-luxury-primary btn-full magnetic">
+                  <span>이메일로 메시지 보내기</span>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       LUXURY FOOTER WITH CURRENT YEAR COPYRIGHT & TOP BUTTON
+  ========================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo-text">RAIJUN ZOO</span>
+        <span class="footer-motto">NO AI, NO GAIN</span>
+      </div>
+
+      <p class="footer-copy">
+        &copy; <span id="currentYear">2026</span> RAIJUN ZOO. All Rights Reserved.
+      </p>
+
+      <div class="footer-actions">
+        <a
+          href="https://www.youtube.com/@raijunzoo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link"
+        >
+          YouTube
+        </a>
+        <a
+          href="https://www.instagram.com/raijunzoo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link"
+        >
+          Instagram
+        </a>
+        <button type="button" class="footer-top-link" data-scroll-to="#home">
+          <span>TOP</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Luxury TOP Button with SVG Scroll Progress Ring -->
+  <button
+    type="button"
+    id="backToTop"
+    class="back-to-top"
+    aria-label="페이지 최상단으로 이동"
+    title="Back to Top"
+  >
+    <svg class="top-progress-ring" viewBox="0 0 56 56" width="56" height="56" aria-hidden="true">
+      <circle class="ring-track" cx="28" cy="28" r="25" />
+      <circle class="ring-fill" id="topRingFill" cx="28" cy="28" r="25" />
+    </svg>
+    <span class="top-btn-inner">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2">
+        <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span class="top-btn-label">TOP</span>
+    </span>
+  </button>
+
+  <!-- =========================================================
+       PORTFOLIO LIGHTBOX / CASE STUDY MODAL
+  ========================================================= -->
+  <div class="modal-backdrop" id="portfolioModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog" role="document">
+      <button type="button" class="modal-close" id="modalCloseBtn" aria-label="모달 닫기">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <div class="modal-media-stage">
+        <div class="modal-media-viewport" id="modalMediaViewport"></div>
+        <div class="modal-media-caption" id="modalMediaCaption"></div>
+        <div class="modal-thumbs" id="modalThumbs"></div>
+      </div>
+
+      <div class="modal-details">
+        <div class="modal-meta">
+          <span class="modal-index" id="modalIndex">01</span>
+          <span class="modal-category" id="modalCategory">CATEGORY</span>
+          <span class="modal-year" id="modalYear">2026</span>
+        </div>
+        <h3 class="modal-title" id="modalTitle">Project Title</h3>
+        <p class="modal-subtitle" id="modalSubtitle">Project Subtitle</p>
+        <p class="modal-summary" id="modalSummary"></p>
+
+        <div class="modal-info-row">
+          <span class="modal-info-label">ROLE</span>
+          <span class="modal-info-val" id="modalRole"></span>
+        </div>
+
+        <div class="modal-tools-wrap">
+          <span class="modal-info-label">TOOLS &amp; AI STACK</span>
+          <div class="modal-tools" id="modalTools"></div>
+        </div>
+
+        <div class="modal-actions">
+          <a
+            id="modalYoutubeLink"
+            href="https://www.youtube.com/@raijunzoo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-luxury btn-luxury-primary"
+          >
+            <span>YouTube에서 감상하기</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="luxury-toast" id="luxuryToast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts: Three.js + GSAP + ScrollTrigger + Lenis -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/hero-webgl.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
